@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160d2d">
+<title>For Inchuuuuu 💗 — From Janu</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:Quicksand,sans-serif;background:#120b25;color:#fff}
+button{font:inherit}
+#app{position:relative;width:100%;height:100%;overflow:hidden}
+.page{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;pointer-events:none;transform:scale(1.04);transition:opacity .75s ease,transform .9s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.page.active{opacity:1;pointer-events:auto;transform:scale(1)}
+.page::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(255,159,207,.22),transparent 30%),radial-gradient(circle at 85% 80%,rgba(125,151,255,.18),transparent 35%);pointer-events:none}
+.card{position:relative;width:min(920px,96vw);max-height:92vh;overflow:auto;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.09);backdrop-filter:blur(16px);border-radius:34px;padding:30px;box-shadow:0 25px 80px rgba(0,0,0,.38);text-align:center}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:Caveat,cursive}
+h1{font-size:clamp(3.1rem,10vw,7rem);line-height:.9;margin-bottom:12px}
+h2{font-size:clamp(2.5rem,7vw,5rem);margin-bottom:10px}
+.subtitle{font-size:clamp(1rem,2.7vw,1.35rem);opacity:.9;line-height:1.6}
+.script{font-family:Caveat,cursive}
+.btn{border:0;border-radius:999px;padding:13px 24px;background:linear-gradient(135deg,#ff78b7,#a878ff);color:#fff;font-weight:700;cursor:pointer;box-shadow:0 10px 28px rgba(255,100,180,.28);transition:.25s;position:relative;z-index:4}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.small{font-size:.85rem;opacity:.7}
+.bg1{background:linear-gradient(150deg,#160b30,#36206b 55%,#10224d)}
+.bg2{background:linear-gradient(145deg,#180a23,#6b174b,#ff718d)}
+.bg3{background:linear-gradient(145deg,#fff0f6,#ffd8e9);color:#3a1730}
+.bg4{background:linear-gradient(145deg,#fff7ef,#f6d5ff);color:#3a2340}
+.bg5{background:linear-gradient(145deg,#071329,#192f61,#4c2a77)}
+.bg6{background:linear-gradient(145deg,#fff0f8,#ffd0e6);color:#3a1730}
+.bg7{background:linear-gradient(145deg,#081125,#17385e,#7a4a78)}
+.bg8{background:linear-gradient(145deg,#20102f,#412052,#e46e9a)}
+.bg9{background:linear-gradient(145deg,#0b1830,#234a68,#1d695e)}
+.bg10{background:linear-gradient(145deg,#fff7f1,#ffd6b9,#f9a5c5);color:#351b32}
+.bg11{background:linear-gradient(145deg,#080817,#19133b,#3b2168)}
+.bg12{background:linear-gradient(145deg,#fff0f7,#f6c9e0,#d4b9ff);color:#381d35}
+.bg13{background:linear-gradient(145deg,#091126,#13284d,#2e3c73)}
+.bg14{background:linear-gradient(145deg,#dff6ff,#fff1fa,#ffe3f2);color:#2b2141}
+.bg15{background:linear-gradient(145deg,#05050e,#171126,#301b49)}
+.starfield,.hearts,.sparkles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+.floatHeart{position:absolute;font-size:20px;animation:floatUp 7s linear forwards;opacity:0}
+@keyframes floatUp{0%{transform:translateY(30px) scale(.5);opacity:0}15%{opacity:.9}100%{transform:translateY(-110vh) rotate(25deg) scale(1.25);opacity:0}}
+.doll{font-size:70px;filter:drop-shadow(0 10px 10px rgba(0,0,0,.2));animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+.glow{animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{to{text-shadow:0 0 30px #ff91c9,0 0 55px #8d78ff}}
+.cake{font-size:100px;animation:bob 2s ease-in-out infinite}
+.polaroids{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+.polaroid{background:#fff;color:#26142c;padding:8px 8px 24px;border-radius:5px;box-shadow:0 12px 25px rgba(0,0,0,.2);transform:rotate(var(--r));transition:.3s}
+.polaroid:hover{transform:rotate(0) translateY(-7px) scale(1.04);z-index:3}
+.polaroid img{width:100%;aspect-ratio:3/4;object-fit:contain;border-radius:2px;background:#fff;display:block}
+.polaroid span{display:block;font-family:Caveat,cursive;font-size:1.2rem;margin-top:5px}
+.letter{background:#fffdf7;color:#3c2834;border-radius:12px;padding:30px;text-align:left;box-shadow:0 18px 35px rgba(0,0,0,.18);font-family:Caveat,cursive;font-size:1.35rem;line-height:1.45;max-width:720px;margin:auto}
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.trait{padding:18px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);transition:.3s}
+.trait:hover{transform:translateY(-6px) rotate(-1deg)}
+.gift{font-size:130px;cursor:pointer;animation:bob 2s infinite;filter:drop-shadow(0 20px 25px rgba(255,70,160,.3))}
+.photo-main{width:min(440px,85vw);max-height:56vh;object-fit:contain;border-radius:28px;box-shadow:0 20px 60px rgba(0,0,0,.35);border:5px solid rgba(255,255,255,.7);transform:rotate(-2deg)}
+.timeline{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px auto;max-width:780px}
+.dot{padding:12px 16px;border-radius:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15)}
+.balloon{display:inline-block;font-size:60px;margin:8px;cursor:pointer;transition:.25s;animation:balloon 3s ease-in-out infinite}
+.balloon:hover{transform:scale(1.18) translateY(-8px)}
+@keyframes balloon{50%{transform:translateY(-10px)}}
+.firework{position:absolute;font-size:50px;animation:boom 1.3s ease-out forwards;pointer-events:none}
+@keyframes boom{0%{opacity:0;transform:scale(.2)}30%{opacity:1}100%{opacity:0;transform:scale(2.5) rotate(25deg)}}
+.music{position:fixed;right:14px;top:14px;z-index:20;display:none}
+.music button{border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.25);color:white;border-radius:50%;width:46px;height:46px;cursor:pointer}
+.nav{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:8px;align-items:center}
+.nav button{border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:#fff;border-radius:50%;width:42px;height:42px;cursor:pointer}
+.counter{position:fixed;top:18px;left:18px;z-index:20;font-size:.8rem;background:rgba(0,0,0,.2);padding:7px 12px;border-radius:999px}
+.secret{margin-top:18px;min-height:28px;font-family:Caveat,cursive;font-size:1.4rem}
+.video-card{position:relative;max-width:600px;margin:auto;border-radius:26px;overflow:hidden;background:rgba(255,255,255,.1);padding:12px}
+.video-card img{width:100%;max-height:48vh;object-fit:contain;border-radius:18px}
+@media(max-width:650px){
+.card{padding:22px 16px;border-radius:26px}
+.polaroids{grid-template-columns:repeat(2,1fr);gap:10px}
+.traits{grid-template-columns:1fr 1fr}
+.doll{font-size:55px}.cake{font-size:80px}.gift{font-size:100px}
+.letter{font-size:1.18rem;padding:22px}
+.photo-main{max-height:49vh}
+}
+
+.lightbox{position:fixed;inset:0;background:rgba(10,8,25,.88);display:none;align-items:center;justify-content:center;z-index:1000;padding:20px;backdrop-filter:blur(10px)}
+.lightbox.show{display:flex}.lightbox img{max-width:92vw;max-height:84vh;object-fit:contain;border-radius:20px;box-shadow:0 20px 80px rgba(0,0,0,.5)}.lightbox .close{position:absolute;top:18px;right:22px;font-size:2rem;color:white;background:rgba(255,255,255,.14);border:0;border-radius:50%;width:48px;height:48px;cursor:pointer}.polaroid{cursor:pointer;transition:transform .35s ease,filter .35s ease}.polaroid:hover{transform:rotate(var(--r)) translateY(-10px) scale(1.04);filter:brightness(1.08)}.photo-main{cursor:pointer;transition:transform .3s ease}.photo-main:hover{transform:scale(1.025)}.tapHeart{position:fixed;pointer-events:none;font-size:24px;animation:heartPop 1.4s ease forwards;z-index:1200}@keyframes heartPop{0%{transform:translate(-50%,-50%) scale(.4);opacity:0}20%{opacity:1}100%{transform:translate(-50%,-150px) rotate(20deg) scale(1.5);opacity:0}}.memoryPop{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%) scale(.8);background:rgba(255,255,255,.96);color:#4b3150;padding:25px;border-radius:24px;max-width:420px;width:82%;text-align:center;z-index:1100;box-shadow:0 20px 70px rgba(0,0,0,.35);display:none}.memoryPop.show{display:block;animation:popIn .35s ease forwards}@keyframes popIn{to{transform:translate(-50%,-50%) scale(1)}}.memoryPop button{margin-top:14px}.secret{min-height:30px}.trait{cursor:pointer;transition:transform .25s ease}.trait:hover{transform:translateY(-6px) rotate(-1deg)}
+</style>
+</head>
+<body>
+<div id="app">
+
+<section class="page bg1 active" data-title="The Beginning">
+  <div class="starfield"></div><div class="hearts"></div>
+  <div class="card">
+    <div class="doll">🧸 💗 🐰</div>
+    <p class="small">From Janu, with suspicious amounts of love 👀</p>
+    <h1 class="glow">Hey Inchuuuuu…</h1>
+    <p class="subtitle">I could have just said ‘Happy Birthday’…<br>but you are not getting off that easily. 😌<br><span class="script">So tap. Explore. And find your surprises. 💗</span></p>
+    <button class="btn" onclick="startExperience()">Tap to enter ❤️</button>
+  </div>
+</section>
+
+<section class="page bg2">
+  <div class="hearts"></div>
+  <div class="card">
+    <div class="doll">👑 🐰 🧸</div>
+    <h2 class="glow">HAPPIEST<br>BIRTHDAYYYYY!</h2>
+    <p class="subtitle">To the girl who somehow turns ordinary moments into stories I want to keep forever. 💗</p>
+    <div class="cake">🎂</div>
+    <p class="script" style="font-size:1.6rem">Okay birthday girl… your little Janu-made universe starts now. ✨</p>
+  </div>
+</section>
+
+<section class="page bg3">
+  <div class="card">
+    <h2>Our little memory book 📸</h2>
+    <p>Proof that somehow we keep collecting moments without even trying. 📸</p>
+    <div class="polaroids">
+      <div class="polaroid" style="--r:-3deg"><img src="assets/photo1.jpg"><span>Heart people 💗</span></div>
+      <div class="polaroid" style="--r:2deg"><img src="assets/photo2.jpg"><span>Selfie chaos ✨</span></div>
+      <div class="polaroid" style="--r:-2deg"><img src="assets/photo5.jpg"><span>Just us 🫶</span></div>
+      <div class="polaroid" style="--r:3deg"><img src="assets/photo8.jpg"><span>Forever memory 🌸</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page bg4">
+  <div class="card">
+    <h2>Dear Inchuuuuu 💌</h2>
+    <div class="letter">
+      <p>Hey Inchuuuuu,</p>
+      <p>Today I just wanted to remind you how special you are to me. You are not just someone I know — you are one of those people who somehow make ordinary college days feel like memories worth keeping.</p>
+      <p>From random selfies and stupid laughs to those little moments we probably didn't realise we'd remember later… I'm genuinely grateful for all of it.</p>
+      <p>Thank you for being my person, for calling me <b>Janu</b>, and for being exactly the kind of friend you are.</p>
+      <p>Keep smiling, keep annoying me, and please stay the same crazy Inchuuuuu. ❤️</p>
+      <p>Happy Birthday once again!</p>
+      <p>— Your Janu 🫶</p>
+    </div>
+  </div>
+</section>
+
+<section class="page bg5">
+  <div class="card">
+    <h2>Six tiny reasons I’m glad it’s <i>us</i> 💫</h2>
+    <div class="traits">
+      <div class="trait">😂<br><b>Unlimited laughs</b><br><small>Even when nothing is funny.</small></div>
+      <div class="trait">🫶<br><b>Always there</b><br><small>Good days & weird days.</small></div>
+      <div class="trait">🤭<br><b>Random conversations</b><br><small>How do we even reach these topics?</small></div>
+      <div class="trait">📸<br><b>Photo evidence</b><br><small>We have proof of everything.</small></div>
+      <div class="trait">🌸<br><b>Comfort</b><br><small>No pretending. Just us.</small></div>
+      <div class="trait">♾️<br><b>Our bond</b><br><small>Different days, same friendship.</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="page bg6">
+  <div class="card">
+    <h2>There’s something inside… but I’m not telling. 👀🎁</h2>
+    <div class="gift" onclick="openGift(this)">🎁</div>
+    <p id="giftText" class="secret">Okay… this one is locked. 👀<br>Click the gift.</p>
+  </div>
+</section>
+
+<section class="page bg7">
+  <div class="card">
+    <h2>Press play. Pretend this is our movie. 🎵</h2>
+    <p class="subtitle">For the walks, talks, laughs, random moments and everything in between. 💗</p>
+    <div class="video-card">
+      <img src="assets/photo7.jpg" alt="Janu and Inchuuuuu">
+      <p class="script" style="font-size:1.7rem">Some friendships deserve their own background music. ✨</p>
+    </div>
+  </div>
+</section>
+
+<section class="page bg8">
+  <div class="card">
+    <h2>Official evidence that we are incapable of being normal 😂</h2>
+    <p class="subtitle">Case file #01: one photo, zero seriousness. 😭</p>
+    <img class="photo-main" src="assets/photo2.jpg" alt="Memory">
+    <p class="script" style="font-size:1.7rem">Honestly? Please never become normal. It would ruin the brand. 😂❤️</p>
+  </div>
+</section>
+
+<section class="page bg9">
+  <div class="card">
+    <h2>If our friendship had a personality… 🌙</h2>
+    <div class="traits">
+      <div class="trait">🌙<br><b>A night sky</b><br>because there's always something new to discover.</div>
+      <div class="trait">🌸<br><b>A flower</b><br>because it keeps growing.</div>
+      <div class="trait">⭐<br><b>A star</b><br>because some people just stand out.</div>
+      <div class="trait">🦋<br><b>A butterfly</b><br>because we keep changing and still stay us.</div>
+      <div class="trait">🧸<br><b>A teddy</b><br>because comfort is the whole point.</div>
+      <div class="trait">💗<br><b>A heart</b><br>because… obviously.</div>
+    </div>
+  </div>
+</section>
+
+<section class="page bg10">
+  <div class="card">
+    <h2>Okay birthday girl — pick your secret wish 🎈</h2>
+    <p>Don’t overthink it. Your first choice counts. 👀</p>
+    <div>
+      <span class="balloon" onclick="wish('More reasons to smile every single day. 💗')">🎈</span>
+      <span class="balloon" onclick="wish('All the success you deserve. ✨')">🎈</span>
+      <span class="balloon" onclick="wish('More adventures with your Janu. 😌')">🎈</span>
+      <span class="balloon" onclick="wish('A year full of beautiful memories. 🌸')">🎈</span>
+    </div>
+    <div id="wish" class="secret">Choose one… 👀</div>
+  </div>
+</section>
+
+<section class="page bg11">
+  <div class="card">
+    <h2>One wish. No taking it back. 🕯️</h2>
+    <p class="subtitle">Close your eyes for a second.<br>Think of the one thing you want this year to bring you.</p>
+    <div class="cake">🎂</div>
+    <button class="btn" onclick="blowCandles()">Blow the candles ✨</button>
+    <p id="wish2" class="secret"></p>
+  </div>
+</section>
+
+<section class="page bg12">
+  <div class="card">
+    <h2>No caption can really explain this. 🫶</h2>
+    <img class="photo-main" src="assets/photo6.jpg" alt="Janu and Inchuuuuu">
+    <p class="subtitle">Some memories don’t need a paragraph.<br>This one is enough. ❤️</p>
+    <div class="timeline">
+      <div class="dot">📚 College days</div><div class="dot">😂 Random chaos</div><div class="dot">📸 Too many selfies</div><div class="dot">❤️ Still us</div>
+    </div>
+  </div>
+</section>
+
+<section class="page bg13">
+  <div class="card">
+    <h2>Now the serious part… just for a minute. 🥹</h2>
+    <p class="subtitle">On the days you doubt yourself, come back to this little page:</p>
+    <div class="letter" style="text-align:center">
+      <p>You have a Janu who will happily keep annoying you, laughing at the dumbest things with you, saving our memories, and cheering ridiculously loudly for you.</p>
+      <p>You never have to be perfect for the people who truly love you. Just be the wonderfully weird you.</p>
+      <p>And please remember…</p>
+      <p style="font-size:2rem"><b>And yes… you are VERY precious, Inchuuuuu. ❤️</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="page bg14">
+  <div class="card">
+    <div class="doll">🐰 💗 🧸</div>
+    <h2 class="glow">Birthday girl unlocked. 🔓<br>Happy Birthday, Inchuuuuu! 🌸</h2>
+    <img class="photo-main" src="assets/photo3.jpg" alt="Inchuuuuu">
+    <p class="subtitle">May this chapter be softer, brighter, funnier, crazier and full of things that make you genuinely proud of yourself.</p>
+    <p class="script" style="font-size:1.8rem">From your Janu, with lots and lots of love. 💗</p>
+  </div>
+</section>
+
+<section class="page bg15">
+  <div class="hearts"></div>
+  <div class="card">
+    <div class="doll">🧸 🐰</div>
+    <p class="small">Final level: Janu’s last message…</p>
+    <h2 class="glow">You thought that was everything? Nope. ♾️</h2>
+    <p class="subtitle">Here’s to more random plans.<br>More uncontrollable laughing.<br>More terrible photos.<br>More ‘Januuu’.<br>More ‘Inchuuuuu’. 😂❤️</p>
+    <button class="btn" onclick="finale()">Keep smiling, Inchuuuuu 💗</button>
+    <p id="finalText" class="secret"></p>
+  </div>
+</section>
+
+<div class="counter" id="counter">1 / 15</div>
+<div class="music" id="musicBox"><button onclick="toggleMusic()" id="musicBtn">🎵</button></div>
+<div class="nav">
+  <button onclick="prevPage()">‹</button>
+  <button onclick="nextPage()">›</button>
+</div>
+<audio id="song" src="assets/birthday-song.mp3" preload="auto" loop></audio>
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button class="close" onclick="closeLightbox(event)">×</button><img id="lightboxImg" src="" alt="Memory full screen"></div>
+<div class="memoryPop" id="memoryPop"><div id="memoryPopText"></div><button class="btn" onclick="closeMemory()">Okay Janu 💗</button></div>
+</div>
+
+<script>
+let current=0, started=false;
+const pages=[...document.querySelectorAll('.page')];
+const song=document.getElementById('song');
+const counter=document.getElementById('counter');
+function show(i){
+  current=(i+pages.length)%pages.length;
+  pages.forEach((p,n)=>p.classList.toggle('active',n===current));
+  counter.textContent=`${current+1} / ${pages.length}`;
+  if(started) burstHearts();
+}
+function nextPage(){show(current+1)}
+function prevPage(){show(current-1)}
+function startExperience(){
+  started=true;
+  document.getElementById('musicBox').style.display='block';
+  song.play().catch(()=>{});
+  burstHearts();
+  show(1);
+}
+function toggleMusic(){
+  const b=document.getElementById('musicBtn');
+  if(song.paused){song.play();b.textContent='🎵'}else{song.pause();b.textContent='🔇'}
+}
+function burstHearts(){
+  const holder=pages[current].querySelector('.hearts')||pages[current];
+  for(let i=0;i<8;i++){
+    const s=document.createElement('span');s.className='floatHeart';
+    s.textContent=['💗','💕','💖','✨','🌸'][Math.floor(Math.random()*5)];
+    s.style.left=(5+Math.random()*90)+'%';s.style.bottom=(-10-Math.random()*15)+'%';
+    s.style.animationDelay=(Math.random()*1.2)+'s';s.style.fontSize=(14+Math.random()*24)+'px';
+    holder.appendChild(s);setTimeout(()=>s.remove(),8000);
+  }
+}
+function makeStars(){
+  document.querySelectorAll('.starfield').forEach(f=>{
+    for(let i=0;i<55;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*2+'s';f.appendChild(s)}
+  });
+}
+function openGift(el){
+  el.textContent='💝';
+  document.getElementById('giftText').innerHTML='Surprise! You deserve all the happiness in the world, Inchuuuuu. 💗<br><br><span class="script">— Janu</span>';
+  burstHearts();
+}
+function wish(t){document.getElementById('wish').textContent=t}
+function blowCandles(){
+  document.getElementById('wish2').innerHTML='✨ Wish sent into the universe! ✨<br><span class="script">Now keep smiling.</span>';
+  for(let i=0;i<18;i++){
+    const f=document.createElement('span');f.className='firework';f.textContent=['✨','💗','🎉','🌸'][i%4];
+    f.style.left=(10+Math.random()*80)+'%';f.style.top=(15+Math.random()*65)+'%';f.style.animationDelay=(Math.random()*.7)+'s';
+    document.body.appendChild(f);setTimeout(()=>f.remove(),2200);
+  }
+}
+function finale(){
+  document.getElementById('finalText').innerHTML='<span style="font-size:1.8rem">Happy Birthday, my Inchuuuuu! ❤️</span><br>Love, Janu 🫶';
+  for(let i=0;i<30;i++){
+    const f=document.createElement('span');f.className='firework';f.textContent=['💗','✨','🎉','💕','🌸'][i%5];
+    f.style.left=Math.random()*100+'%';f.style.top=Math.random()*100+'%';f.style.animationDelay=Math.random()+'s';
+    document.body.appendChild(f);setTimeout(()=>f.remove(),2200);
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextPage();if(e.key==='ArrowLeft')prevPage()});
+let sx=0;document.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60){dx<0?nextPage():prevPage()}},{passive:true});
+
+function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('show')}
+function closeLightbox(e){if(e) e.stopPropagation();document.getElementById('lightbox').classList.remove('show')}
+function popMemory(msg){document.getElementById('memoryPopText').innerHTML=msg;document.getElementById('memoryPop').classList.add('show');burstHearts()}
+function closeMemory(){document.getElementById('memoryPop').classList.remove('show')}
+function heartAt(x,y){const h=document.createElement('span');h.className='tapHeart';h.textContent=['💗','💕','💖','✨','🌸'][Math.floor(Math.random()*5)];h.style.left=x+'px';h.style.top=y+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),1400)}
+document.querySelectorAll('.polaroid img,.photo-main').forEach(img=>img.addEventListener('click',e=>{e.stopPropagation();openLightbox(img.src);heartAt(e.clientX,e.clientY)}));
+document.querySelectorAll('.trait').forEach((el,i)=>el.addEventListener('click',()=>popMemory(['Because with you, even boring moments somehow become stories. 💗','Some people are friends. You became one of my favourite people. 🫶','Our conversations have absolutely no normal route. 😂','Future us will look at these photos and laugh at ourselves. 📸','No pretending, no perfect version — just us. 🌸','Some bonds don’t need constant explaining. They just stay. ♾️'][i])));
+document.addEventListener('click',e=>{if(!e.target.closest('button,.gift,.balloon,.nav,.music,.polaroid,.photo-main,.trait,.lightbox,.memoryPop')) heartAt(e.clientX,e.clientY)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeMemory()}});
+makeStars();
+</script>
+</body>
+</html>
